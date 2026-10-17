@@ -448,6 +448,7 @@ h1{margin:4px 0 4px;font-size:clamp(1.8rem,4.5vw,2.8rem);letter-spacing:-.03em;l
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
 h2{margin:0 0 4px;font-size:1rem}.note{color:var(--muted);font-size:.82rem;margin:0 0 10px}
 #map{height:520px;border-radius:8px}
+@media (prefers-color-scheme:dark){#map .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)}}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--ink2);margin-top:10px}
 .tier{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
 .t0{background:var(--t0)}.t1{background:var(--t1)}.t2{background:var(--t2)}.t3{background:var(--t3)}
@@ -506,7 +507,7 @@ footer{margin-top:24px;color:var(--muted);font-size:.82rem}a{color:var(--accent)
 
 <footer>Data: <a href="https://www.dart.org/about/about-dart/fixed-route-schedule">DART GTFS schedule feed</a>.
 "Every N min" = window length ÷ trips starting in the busiest direction. Speeds are scheduled end-to-end averages.
-Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, © CARTO.
+Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
 Built by <a href="https://github.com/ryanstormrage">ryanstormrage</a> · <a href="https://github.com/ryanstormrage/dallas-dart-transit">code</a>.</footer>
 </div>
 
@@ -519,8 +520,8 @@ const dark = matchMedia('(prefers-color-scheme: dark)').matches;
 // ---- map (skipped gracefully if the map library can't load)
 if (window.L) {
 const map = L.map('map', {scrollWheelZoom: false});
-L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark ? 'dark_all' : 'light_all'}/{z}/{x}/{y}{r}.png`,
-  {attribution: '© OpenStreetMap contributors © CARTO', maxZoom: 18}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19}).addTo(map);
 const bounds = [];
 // draw least frequent first so frequent routes sit on top
 [...GEO].sort((a, b) => TIERS.indexOf(b.tier) - TIERS.indexOf(a.tier)).forEach(r => {
