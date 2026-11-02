@@ -1,6 +1,6 @@
 # DART bus network: SQL analysis
 
-Weekday analyzed: **Wednesday, October 28, 2026** · Saturday 2026-10-31 · Sunday 2026-11-01  
+Weekday analyzed: **Wednesday, November 4, 2026** · Saturday 2026-11-07 · Sunday 2026-11-08  
 Source: DART GTFS schedule feed. Each section is one file in `sql/analysis/`.
 
 ## Network at a glance: how much bus service does DART run?
@@ -9,7 +9,7 @@ Source: DART GTFS schedule feed. Each section is one file in `sql/analysis/`.
 
 | bus_routes | weekday_trips | saturday_trips | sunday_trips | sunday_as_pct_of_weekday | total_route_miles_one_way | avg_scheduled_speed_mph |
 |---|---|---|---|---|---|---|
-| 84 | 6,729 | 5,155 | 4,995 | 74.2 | 890.0 | 15.4 |
+| 84 | 6,729 | 5,155 | 4,995 | 74.2 | 892.0 | 15.5 |
 
 ## How many routes fall in each frequency tier (midday, weekday)?
 
@@ -82,14 +82,14 @@ Source: DART GTFS schedule feed. Each section is one file in `sql/analysis/`.
 | Slowest | 001 | MALCOLM X/MAPLE | 8.7 | 43.0 | 12.1 | 934.0 |
 | Slowest | 103 | CEDAR SPRINGS | 4.3 | 21.0 | 12.1 | 851.0 |
 | Slowest | 205 | HENDERSON | 6.6 | 32.0 | 12.3 | 825.0 |
-| Fastest | 239 | DALLAS - ADDISON - LEGACY | 23.9 | 79.0 | 18.2 | 1,629.0 |
+| Fastest | 239 | DALLAS - ADDISON - LEGACY | 23.9 | 79.0 | 18.2 | 1,634.0 |
 | Fastest | 213 | HARRY HINES | 4.6 | 15.0 | 18.3 | 1,038.0 |
 | Fastest | 235 | TIMBERGLEN/MIDWAY | 8.2 | 27.0 | 18.3 | 999.0 |
-| Fastest | 243 | PLANO RD | 7.2 | 22.0 | 19.8 | 893.0 |
 | Fastest | 308 | NORTHWEST PLANO EXPRESS | 23.3 | 64.0 | 21.7 | 4,633.0 |
+| Fastest | 243 | PLANO RD | 7.4 | 20.0 | 22.1 | 893.0 |
 | Fastest | 224 | I-30 BROADWAY | 21.0 | 53.0 | 23.7 | 1,848.0 |
-| Fastest | 223 | CLARK | 11.0 | 27.0 | 24.5 | 1,528.0 |
 | Fastest | 306 | GLENN HEIGHTS EXPRESS | 20.6 | 46.0 | 26.6 | 4,178.0 |
+| Fastest | 223 | CLARK | 9.9 | 22.0 | 27.1 | 1,528.0 |
 
 ## Do routes with stops closer together run slower? Average speed by stop-spacing band.
 
@@ -98,9 +98,9 @@ Source: DART GTFS schedule feed. Each section is one file in `sql/analysis/`.
 | stop_spacing | routes | avg_speed_mph | avg_length_mi |
 |---|---|---|---|
 | 1: under 800 ft | 7 | 14.2 | 7.0 |
-| 2: 800-1,200 ft | 63 | 15.3 | 10.9 |
-| 3: 1,200-1,800 ft | 6 | 16.5 | 12.4 |
-| 4: 1,800 ft + | 8 | 16.3 | 10.0 |
+| 2: 800-1,200 ft | 63 | 15.4 | 10.9 |
+| 3: 1,200-1,800 ft | 6 | 16.9 | 12.4 |
+| 4: 1,800 ft + | 8 | 16.5 | 10.0 |
 
 ## The 15 busiest bus stops by scheduled weekday departures.
 
